@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>IMS</title>
+    <link rel="stylesheet"
+          href="{% static 'inventoryapp/bootstrap.min.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'inventoryapp/style.css' %}">
+</head>
+<body>
+<div class="container">
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}
+    alert-dismissible" role="alert">
+    <button type="button" class="close"
+            data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times</span>
+    </button>
+    {{ message }}
+    </div>
+{% endfor %}
+{% endif %}
+{% block content %}
+
+{% endblock %}
+</div>
+</body>
+</html>

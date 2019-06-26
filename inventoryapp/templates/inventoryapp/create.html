@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h3>ADD ITEM</h3>
+    <div class="formwrapper col-md-6 offset-3 text-white"
+    style="background-color: {{ color }}">
+<form action="" method="post">
+    <h3 style="text-align: center">{{ header }}</h3>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div>
+        <button class="btn btn-primary" type="submit">
+            SAVE ITEM</button>
+    </div>
+</form>
+    </div>
+{% endblock %}
